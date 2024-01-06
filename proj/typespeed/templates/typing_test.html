@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Speed Test</title>
+</head>
+<body>
+    <h2>Type the following text:</h2>
+    <p>{{ prompt_text }}</p>
+    <form method="post" action="{% url 'typespeed' %}">
+        {% csrf_token %}
+        <label for="user_input">Start typing:</label>
+        <input type="text" name="user_input" required>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
